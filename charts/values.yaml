@@ -9,9 +9,12 @@ service:
   type: ClusterIP
   port: 8080
 
-serviceAccount:
-  create: false
-  name: spectrum-sa
+# service account required for pub/sub, cloudsql etc
+# create a gcp service account and link it with kuberentes sa
+# kubernetes service account needs to be updated here.
+#serviceAccount:
+#  create: false
+#  name: spectrum-sa
 
 ingress:
   enabled: false
