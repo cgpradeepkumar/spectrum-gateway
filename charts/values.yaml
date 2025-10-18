@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  repository: cgpradeepkumar/spectrum-gateway
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+serviceAccount:
+  create: false
+  name: spectrum-sa
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: spectrum-gateway.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
