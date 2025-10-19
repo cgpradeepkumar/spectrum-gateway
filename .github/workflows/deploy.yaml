@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-          helm upgrade --install ${{ env.DEPLOYMENT_NAME }} ./charts \
+          helm upgrade --install ./charts \
             --set image.repository=${{ env.DOCKER_IMAGE_NAME }} \
             --set image.tag=latest \
             --namespace ${{ env.NAMESPACE }} --create-namespace
