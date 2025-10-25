@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: cgpradeepkumar/spectrum-gateway
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: LoadBalancer
